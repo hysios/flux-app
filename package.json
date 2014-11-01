@@ -1,5 +1,5 @@
 {
-  "name": "FluxApp",
+  "name": "flux-app",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -7,16 +7,12 @@
     "test": "mocha --compilers coffee:coffee-script/register",
     "prestart": "coffee --output lib --compile src"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Hysios Hu <hysios@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "coffee-script": "^1.8.0",
-    "debug": "^2.1.0",
     "dispatchr": "^0.2.7",
-    "express": "^4.10.1",
-    "express-state": "^1.2.0",
     "fetchr": "^0.4.0",
-    "history.js": "^1.8.0",
     "lodash-express": "0.0.2",
     "lodash-node": "^2.4.1",
     "mocha": "^2.0.1",
@@ -28,5 +24,18 @@
     "supertest": "^0.14.0",
     "traceur": "0.0.72",
     "traceur-source-maps": "^1.0.4"
+  },
+  "dependencies": {
+    "debug": "^2.1.0",
+    "express-state": "^1.2.0",
+    "history.js": "^1.8.0",
+    "dispatchr": "^0.2.7",
+    "lodash-express": "0.0.2",
+    "lodash-node": "^2.4.1",
+    "express": "^4.10.1",
+    "fetchr": "^0.4.0",
+    "react": "^0.12.0",
+    "routes": "^1.2.0"
   }
 }
+
