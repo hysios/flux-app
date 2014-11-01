@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --compilers coffee:coffee-script/register",
-    "postinstall": "coffee --output lib --compile src",
     "prestart": "coffee --output lib --compile src"
   },
   "author": "",
