@@ -15,18 +15,18 @@ class App
 	 * @return {[type]}          [description]
 	###	
 	constructor: (options) ->
-		@projectPath = path.resolve(options.projectPath) || process.cwd();
-		@appPath = path.join(this.projectPath, "app");
-		@appJsxName = options.appJsxName || "Application.jsx";
+		@projectPath = path.resolve(options.projectPath || process.cwd())
+		@appPath = path.join(this.projectPath, "app")
+		@appJsxName = options.appJsxName || "Application.jsx"
 		# @applicationFile = path.join(this.appPath, this.appJsxName);
-		@values = {};
+		@values = {}
 		debug("load routes files:", @appPath + "/router.js")
 		@router = new Router(@appPath + "/router.js") unless @router?
-		@pagePrefix = options.pagePrefix || "Open";
-		@pageSuffix = options.pageSuffix || "Page";
-		@stores = options.stores || [];
-		@dispatcherAdapter = options.dispatcherAdapter || Dispatchr;
-		@dispatcher = options.dispatcher || new @dispatcherAdapter({});
+		@pagePrefix = options.pagePrefix || "Open"
+		@pageSuffix = options.pageSuffix || "Page"
+		@stores = options.stores || []
+		@dispatcherAdapter = options.dispatcherAdapter || Dispatchr
+		@dispatcher = options.dispatcher || new @dispatcherAdapter({})
 
 		# for store of @stores
 		# 	@registerStore(store);
