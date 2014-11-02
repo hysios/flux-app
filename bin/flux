@@ -11,14 +11,42 @@ var version = pkg.version;
 
 program
 	.version(version)
-	.option('-p --port <port>', 'change the server port')
+	.usage('[options] [dir]')
+	.option('-p --port <port>', 'change the server port');
 
 program
 	.command('init <dir>')
 	.description('generate a flux-app framework into destination dir')
+	.action(function() {
+    	console.log('init');
+	});	
 
 program
 	.command('server')
+	.alias('s')
 	.description('launch flux app server')
-	.parse(process.argv);
+	.action(function() {
+    	console.log('server');
+	});
 
+program
+	.command('generate <type>')
+	.alias('g')
+	.description('generate flux actions, stores, fetchers, compnents...(etc.)')
+	.action(function() {
+    	console.log('generate');
+	});
+
+// program
+// 	.command('*')
+// 	.description('invalid comamand')
+// 	.action(function(env) {
+// 		console.log('invalid comamand', env);
+// 	});
+
+program.parse(process.argv);
+
+
+var aliasCommand = function(name, prog, handle) {
+	handle
+}
