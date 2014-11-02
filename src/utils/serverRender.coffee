@@ -8,7 +8,7 @@ module.exports = serverRender = (page, http, context, callback) ->
 		props = retrievePropsFromPage(page)
 		debug('retrive page props', props)
 		html = React.renderToString(page)
-		console.log(context);
+		# console.log(context);
 		debug('expose context', context.dehydrate())
 		http.expose(context.dehydrate(), 'Context')
 

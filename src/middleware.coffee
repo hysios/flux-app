@@ -22,7 +22,7 @@ class Middleware
 		@res.render layout, options, (err, markup) =>
 			callback(err);
 			debug('Sending markup');
-			console.log(markup);
+			# console.log(markup);
 			@res.send(markup)
 			@next(err);
 

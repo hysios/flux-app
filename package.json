@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --compilers coffee:coffee-script/register",
-    "prestart": "coffee --output lib --compile src"
+    "test": "NODE_ENV=test mocha --compilers coffee:coffee-script/register",
+    "prestart": "coffee --output lib --compile src",
+    "pretest": "coffee --output lib --compile src"
   },
   "bin": {
     "flux": "./bin/flux"
   },
-  "preferGlobal": true,  
+  "preferGlobal": true,
   "author": "Hysios Hu <hysios@gmail.com>",
   "license": "MIT",
   "devDependencies": {
@@ -37,10 +38,13 @@
     "express-state": "^1.2.0",
     "fetchr": "^0.4.0",
     "history.js": "^1.8.0",
+    "init-package-json": "^1.1.1",
     "lodash-express": "0.0.2",
     "lodash-node": "^2.4.1",
     "mkdirp": "^0.5.0",
     "react": "^0.12.0",
-    "routes": "^1.2.0"
+    "routes": "^1.2.0",
+    "semver": "^4.1.0",
+    "tmp": "0.0.24"
   }
 }
