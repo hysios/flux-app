@@ -9,7 +9,8 @@
   },
   "bin": {
     "flux": "./bin/flux"
-  },  
+  },
+  "preferGlobal": true,  
   "author": "Hysios Hu <hysios@gmail.com>",
   "license": "MIT",
   "devDependencies": {
