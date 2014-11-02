@@ -5,16 +5,36 @@ var program = require('commander');
 var path = require('path');
 var pkg = require('../package.json');
 var createApplicationAt = require('../lib/binary/createApplication');
+var server = require('../lib/binary/server');
 
 var version = pkg.version;
 
 // CLI
 var projectPath = process.cwd();
 
+function range(val) {
+  return val.split('..').map(Number);
+}
+
+function list(val) {
+  return val.split(',');
+}
+
+function collect(val, memo) {
+  memo.push(val);
+  return memo;
+}
+
+function increaseVerbosity(v, total) {
+  return total + 1;
+}
+
+
 program
 	.version(version)
 	.usage('[options] [dir]')
-	.option('-p --port <port>', 'change the server port')
+	.option('-p --port <port>', 'change the server port', parseInt, 3000)
+	.option('-e --environment <env>', 'flux app run in <env> environment', String, 'development')
 	.option('--fluxapp <version_or_url>', 'specify fluxApp version or url in target package.json');
 
 program
@@ -35,7 +55,11 @@ program
 	.alias('s')
 	.description('launch flux app server')
 	.action(function() {
-    	console.log('server');
+    	server({
+    		port: program.port,
+    		appPath: process.cwd(),
+    		environment: program.environment
+    	})
 	});
 
 program
